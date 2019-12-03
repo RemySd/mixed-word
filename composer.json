@@ -1,0 +1,11 @@
+{
+    "name": "remysd/mixed-word",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Remy",
+            "email": "remy.sainsard@gmail.com"
+        }
+    ],
+    "require": {}
+}
