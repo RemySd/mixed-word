@@ -1,11 +1,18 @@
 {
     "name": "remysd/mixed-word",
+    "description": "",
     "type": "library",
+    "license": "MIT",
     "authors": [
         {
             "name": "Remy",
             "email": "remy.sainsard@gmail.com"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "RemySd\\": "src"
+        }
+    },
     "require": {}
 }

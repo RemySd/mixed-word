@@ -8,5 +8,5 @@ interface BlenderInterface
 
     public function getDependencyMixe(): array;
 
-    public function getName(): string;
+    public static function getName(): string;
 }

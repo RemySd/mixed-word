@@ -2,7 +2,6 @@
 
 namespace RemySd;
 
-use RemySd\Type\BlenderReverse;
 use RemySd\BlenderRegistry;
 
 class Blender
@@ -10,17 +9,18 @@ class Blender
     const BLENDER_REVERSE = 'BlenderReverse';
 
     /**
-     * @var array only with BlenderInterface element
+     * @var BlenderRegistry only with BlenderInterface element
      */
-    private $blenderRegistry;
+    private BlenderRegistry $blenderRegistry;
 
-    private function __construct()
+    public function __construct()
     {
         $this->blenderRegistry = new BlenderRegistry();
     }
 
     public function mixe(string $word, string $type = self::BLENDER_REVERSE): string
     {
+        var_dump($this->blenderRegistry->get($type));
         return 'null';
     }
 }

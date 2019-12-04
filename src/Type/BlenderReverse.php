@@ -4,7 +4,6 @@ namespace RemySd\Type;
 
 class BlenderReverse implements BlenderInterface
 {
-
     public function doMixe(string $word): string
     {
         return "test";
@@ -15,7 +14,7 @@ class BlenderReverse implements BlenderInterface
         return [];
     }
 
-    public function getName(): string
+    public static function getName(): string
     {
         return 'BlenderReverse';
     }
