@@ -1,8 +1,8 @@
 <?php
 
-namespace RemySd;
+namespace MixedWord;
 
-use RemySd\BlenderRegistry;
+use MixedWord\BlenderRegistry;
 
 class Blender
 {
@@ -11,7 +11,7 @@ class Blender
     /**
      * @var BlenderRegistry only with BlenderInterface element
      */
-    private BlenderRegistry $blenderRegistry;
+    private \MixedWord\BlenderRegistry $blenderRegistry;
 
     public function __construct()
     {
@@ -20,7 +20,6 @@ class Blender
 
     public function mixe(string $word, string $type = self::BLENDER_REVERSE): string
     {
-        var_dump($this->blenderRegistry->get($type));
-        return 'null';
+        return $this->blenderRegistry->get($type)->doMixe($word);
     }
 }

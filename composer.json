@@ -11,8 +11,13 @@
     ],
     "autoload": {
         "psr-4": {
-            "RemySd\\": "src"
+            "MixedWord\\": "src"
         }
     },
-    "require": {}
+    "autoload-dev": {
+        "psr-4": {}
+    },
+    "require": {
+        "php": ">=7.4"
+    }
 }

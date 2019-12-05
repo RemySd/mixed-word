@@ -1,10 +1,10 @@
 <?php
 
-namespace RemySd;
+namespace MixedWord;
 
-use RemySd\Type\BlenderInterface;
+use MixedWord\Type\BlenderInterface;
+use MixedWord\Type\BlenderReverse;
 use Exception;
-use RemySd\Type\BlenderReverse;
 
 class BlenderRegistry
 {

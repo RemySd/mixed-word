@@ -1,12 +1,12 @@
 <?php
 
-namespace RemySd\Type;
+namespace MixedWord\Type;
 
 class BlenderReverse implements BlenderInterface
 {
     public function doMixe(string $word): string
     {
-        return "test";
+        return strrev($word);
     }
 
     public function getDependencyMixe(): array
