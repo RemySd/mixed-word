@@ -3,7 +3,7 @@
 define('__ROOT__', dirname(dirname(__FILE__)));
 require __ROOT__.'./vendor/autoload.php';
 
-use MixedWord\Blender;
+use RemySd\MixedWord\Blender;
 
 $blender = new Blender();
 
