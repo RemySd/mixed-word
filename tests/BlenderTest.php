@@ -41,4 +41,10 @@ class BlenderTest extends TestCase
 
         $this->assertEquals($expected, $actual);
     }
+
+    public function testNoConsonant(): void
+    {
+        $this->assertEquals('eo', $this->blender->mixe('hello', Blender::BLENDER_NO_CONSONANT));
+        $this->assertEquals('eo', $this->blender->mixe('hello', 'BlenderNoConsonant'));
+    }
 }

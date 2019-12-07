@@ -9,6 +9,7 @@ class Blender
     const BLENDER_REVERSE = 'BlenderReverse';
     const BLENDER_RANDOM = 'BlenderRandom';
     const BLENDER_NOT_VOWELS = 'BlenderNotVowels';
+    const BLENDER_NO_CONSONANT = 'BlenderNoConsonant';
 
     /**
      * @var BlenderRegistry only with BlenderInterface element
