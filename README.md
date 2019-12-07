@@ -31,3 +31,4 @@ echo $wordMixed;
 * BlenderReverse
 * BlenderRandom
 * BlenderNotVowels
+* BlenderNoConsonant
