@@ -1,6 +1,6 @@
 {
     "name": "remysd/mixed-word",
-    "description": "",
+    "description": "Library used for transform string word",
     "type": "library",
     "license": "MIT",
     "authors": [
