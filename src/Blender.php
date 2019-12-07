@@ -10,6 +10,9 @@ class Blender
     const BLENDER_RANDOM = 'BlenderRandom';
     const BLENDER_NOT_VOWELS = 'BlenderNotVowels';
     const BLENDER_NO_CONSONANT = 'BlenderNoConsonant';
+    const BLENDER_UPPER_LOWER_LOOP = 'BlenderUpperLowerLoop';
+    const BLENDER_SPACE_BETWEEN = 'BlenderSpaceBetween';
+    const BLENDER_REMOVE_SPACE = 'BlenderRemoveSpace';
 
     /**
      * @var BlenderRegistry only with BlenderInterface element

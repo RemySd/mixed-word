@@ -47,4 +47,22 @@ class BlenderTest extends TestCase
         $this->assertEquals('eo', $this->blender->mixe('hello', Blender::BLENDER_NO_CONSONANT));
         $this->assertEquals('eo', $this->blender->mixe('hello', 'BlenderNoConsonant'));
     }
+
+    public function testUpperLowerLoop(): void
+    {
+        $this->assertEquals('HeLlO', $this->blender->mixe('hello', Blender::BLENDER_UPPER_LOWER_LOOP));
+        $this->assertEquals('HeLlO', $this->blender->mixe('hello', 'BlenderUpperLowerLoop'));
+    }
+
+    public function testRemoveSpace(): void
+    {
+        $this->assertEquals('hellomyfriend', $this->blender->mixe('hello my friend', Blender::BLENDER_REMOVE_SPACE));
+        $this->assertEquals('hellomyfriend', $this->blender->mixe('hello my friend', 'BlenderRemoveSpace'));
+    }
+
+    public function testSpaceBetween(): void
+    {
+        $this->assertEquals('h e l l o', $this->blender->mixe('hello', Blender::BLENDER_SPACE_BETWEEN));
+        $this->assertEquals('h e l l o', $this->blender->mixe('hello', 'BlenderSpaceBetween'));
+    }
 }
