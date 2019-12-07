@@ -1,6 +1,6 @@
 <?php
 
-namespace MixedWord;
+namespace RemySd\MixedWord;
 
 interface BlenderInterface
 {

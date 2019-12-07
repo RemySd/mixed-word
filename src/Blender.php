@@ -1,8 +1,8 @@
 <?php
 
-namespace MixedWord;
+namespace RemySd\MixedWord;
 
-use MixedWord\BlenderRegistry;
+use RemySd\MixedWord\BlenderRegistry;
 
 class Blender
 {

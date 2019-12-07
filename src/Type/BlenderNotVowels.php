@@ -1,10 +1,10 @@
 <?php
 
 
-namespace MixedWord\Type;
+namespace RemySd\MixedWord\Type;
 
 
-use MixedWord\BlenderInterface;
+use RemySd\MixedWord\BlenderInterface;
 
 class BlenderNotVowels implements BlenderInterface
 {

@@ -1,13 +1,13 @@
 <?php
 
-namespace MixedWord;
+namespace RemySd\MixedWord;
 
-use MixedWord\BlenderInterface;
+use RemySd\MixedWord\BlenderInterface;
 use Exception;
 
 class BlenderRegistry
 {
-    const BLENDER_NAMESPACE = 'MixedWord\\Type\\';
+    const BLENDER_NAMESPACE = 'RemySd\\MixedWord\\Type\\';
 
     private $blenders = [];
 

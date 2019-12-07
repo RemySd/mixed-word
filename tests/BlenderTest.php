@@ -2,7 +2,7 @@
 
 namespace Tests;
 
-use MixedWord\Blender;
+use RemySd\MixedWord\Blender;
 use PHPUnit\Framework\TestCase;
 
 class BlenderTest extends TestCase
