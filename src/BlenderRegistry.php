@@ -2,15 +2,15 @@
 
 namespace MixedWord;
 
-use MixedWord\Type\BlenderInterface;
+use MixedWord\BlenderInterface;
 use MixedWord\Type\BlenderReverse;
 use Exception;
 
 class BlenderRegistry
 {
-    private array $blenders = [];
+    private $blenders = [];
 
-    private static ?BlenderRegistry $instance = null;
+    private static $instance = null;
 
     public static function getInstance(): BlenderRegistry
     {
@@ -24,6 +24,7 @@ class BlenderRegistry
     public function __construct()
     {
         $this->blenders[BlenderReverse::getName()] = new BlenderReverse();
+//        $this->set(BlenderReverse::getName(), new BlenderReverse());
     }
 
     /**

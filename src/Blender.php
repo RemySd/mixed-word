@@ -11,7 +11,7 @@ class Blender
     /**
      * @var BlenderRegistry only with BlenderInterface element
      */
-    private \MixedWord\BlenderRegistry $blenderRegistry;
+    private $blenderRegistry;
 
     public function __construct()
     {

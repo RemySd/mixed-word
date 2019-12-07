@@ -1,6 +1,6 @@
 <?php
 
-namespace MixedWord\Type;
+namespace MixedWord;
 
 interface BlenderInterface
 {
