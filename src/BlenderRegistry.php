@@ -3,11 +3,12 @@
 namespace MixedWord;
 
 use MixedWord\BlenderInterface;
-use MixedWord\Type\BlenderReverse;
 use Exception;
 
 class BlenderRegistry
 {
+    const BLENDER_NAMESPACE = 'MixedWord\\Type\\';
+
     private $blenders = [];
 
     private static $instance = null;
@@ -23,12 +24,16 @@ class BlenderRegistry
 
     public function __construct()
     {
-        $this->blenders[BlenderReverse::getName()] = new BlenderReverse();
-//        $this->set(BlenderReverse::getName(), new BlenderReverse());
+        $blenderClassList = array_diff(scandir(dirname(__FILE__) . '//Type' ), array('..', '.'));
+
+        foreach($blenderClassList as $className) {
+            $this->set(explode('.', $className)[0]);
+        }
     }
 
     /**
      * @param string $name
+     *
      * @return BlenderInterface
      * @throws Exception
      */
@@ -43,18 +48,20 @@ class BlenderRegistry
 
     /**
      * @param string $name
-     * @param BlenderInterface $value
      *
      * @return $this
      * @throws Exception
      */
-    public function set(string $name, BlenderInterface $value): self
+    public function set(string $name): self
     {
         if (array_key_exists($name, $this->blenders)) {
             throw new Exception('Blender already exist');
         }
 
-        $this->blenders[$name] = $value;
+        $classname = self::BLENDER_NAMESPACE . $name;
+        $blender = new $classname();
+
+        $this->blenders[$name] = $blender;
 
         return $this;
     }
