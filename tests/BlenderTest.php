@@ -41,12 +41,4 @@ class BlenderTest extends TestCase
 
         $this->assertEquals($expected, $actual);
     }
-
-        public function testMultipleBlenderT(): void
-    {
-        $expected = 'llfh';
-        $actual = $this->blender->multipleMixe('hello', [Blender::BLENDER_REVERSE, Blender::BLENDER_NOT_VOWELS]);
-
-        $this->assertEquals($expected, $actual);
-    }
 }
