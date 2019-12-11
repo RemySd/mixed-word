@@ -65,4 +65,41 @@ class BlenderTest extends TestCase
         $this->assertEquals('h e l l o', $this->blender->mixe('hello', Blender::BLENDER_SPACE_BETWEEN));
         $this->assertEquals('h e l l o', $this->blender->mixe('hello', 'BlenderSpaceBetween'));
     }
+
+    public function testOptionsResolver(): void
+    {
+        $this->assertEquals(
+            'heo',
+            $this->blender->mixe(
+                'hello',
+                Blender::BLENDER_REMOVE_CHARACTER,
+                ['character' => 'l']
+            )
+        );
+    }
+
+    public function testRemoveCharacter(): void
+    {
+        $this->assertEquals(
+            'hell',
+            $this->blender->mixe(
+                'hello',
+                Blender::BLENDER_REMOVE_CHARACTER,
+                ['character' => 'o']
+            )
+        );
+    }
+
+    public function testRemoveCharacters(): void
+    {
+        $this->assertEquals(
+            'h',
+            $this->blender->mixe(
+                'hello',
+                Blender::BLENDER_REMOVE_CHARACTERS,
+                ['characters' => ['o', 'e', 'l']]
+            )
+        );
+    }
+
 }

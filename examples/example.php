@@ -22,4 +22,8 @@ echo "\n";
 echo $blender->mixe('hello my friend', Blender::BLENDER_REMOVE_SPACE);
 echo "\n";
 echo $blender->mixe('hello !', Blender::BLENDER_SPACE_BETWEEN);
+echo "\n";
+echo $blender->mixe('hello !', Blender::BLENDER_REMOVE_CHARACTERS, [
+    'characters' => ['l', '!']
+]);
 

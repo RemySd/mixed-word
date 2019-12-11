@@ -13,6 +13,8 @@ class Blender
     const BLENDER_UPPER_LOWER_LOOP = 'BlenderUpperLowerLoop';
     const BLENDER_SPACE_BETWEEN = 'BlenderSpaceBetween';
     const BLENDER_REMOVE_SPACE = 'BlenderRemoveSpace';
+    const BLENDER_REMOVE_CHARACTER = 'BlenderRemoveCharacter';
+    const BLENDER_REMOVE_CHARACTERS = 'BlenderRemoveCharacters';
 
     /**
      * @var BlenderRegistry only with BlenderInterface element
@@ -28,7 +30,6 @@ class Blender
     {
         $blender = $this->blenderRegistry->get($type);
         $options = $this->setOptionsResolver($blender, $options);
-        var_dump($options);die;
 
         if ($blender->getDependencyMixe()) {
             foreach ($blender->getDependencyMixe() as $dependencyBlenderName) {
@@ -36,7 +37,7 @@ class Blender
             }
         }
 
-        return $this->blenderRegistry->get($type)->doMixe($word);
+        return $this->blenderRegistry->get($type)->doMixe($word, $options);
     }
 
     public function multipleMixe(string $word, array $types = [self::BLENDER_REVERSE]): string
@@ -48,7 +49,7 @@ class Blender
         return $word;
     }
 
-    private function setOptionsResolver(BlenderInterface $blender, $options): array
+    private function setOptionsResolver(BlenderInterface $blender, array $options = []): array
     {
         if (empty($options)) {
             return $blender->getOptionResolver();
@@ -62,6 +63,7 @@ class Blender
                 continue;
             }
 
+            // Default value to optionsResolver
             $optionsUpdated[$key] = $value;
         }
 
