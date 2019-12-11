@@ -13,7 +13,7 @@ class BlenderReverse implements BlenderInterface
      *
      * @return string
      */
-    public function doMixe(string $word): string
+    public function doMixe(string $word, array $options = []): string
     {
         return strrev($word);
     }
@@ -26,5 +26,10 @@ class BlenderReverse implements BlenderInterface
     public static function getName(): string
     {
         return 'BlenderReverse';
+    }
+
+    public function getOptionResolver(): array
+    {
+        return [];
     }
 }

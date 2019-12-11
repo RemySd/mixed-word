@@ -6,7 +6,7 @@ use RemySd\MixedWord\BlenderInterface;
 
 class BlenderUpperLowerLoop implements BlenderInterface
 {
-    public function doMixe(string $word): string
+    public function doMixe(string $word, array $options = []): string
     {
         $result = "";
         $caps = true;
@@ -33,5 +33,10 @@ class BlenderUpperLowerLoop implements BlenderInterface
     public static function getName(): string
     {
         return 'BlenderUpperLowerLoop';
+    }
+
+    public function getOptionResolver(): array
+    {
+        return [];
     }
 }

@@ -7,9 +7,9 @@ use RemySd\MixedWord\Blender;
 
 $blender = new Blender();
 
-echo $blender->mixe('hello'); // BlenderReverse by default
-echo "\n";
 echo $blender->mixe('hello', Blender::BLENDER_RANDOM);
+echo "\n";
+echo $blender->mixe('hello'); // BlenderReverse by default
 echo "\n";
 echo $blender->multipleMixe('hello', [Blender::BLENDER_RANDOM, Blender::BLENDER_RANDOM]);
 echo "\n";

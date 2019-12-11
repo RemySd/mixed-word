@@ -7,7 +7,7 @@ use RemySd\MixedWord\BlenderInterface;
 
 class BlenderSpaceBetween implements BlenderInterface
 {
-    public function doMixe(string $word): string
+    public function doMixe(string $word, array $options = []): string
     {
         $result = "";
 
@@ -26,5 +26,10 @@ class BlenderSpaceBetween implements BlenderInterface
     public static function getName(): string
     {
         return 'BlenderSpaceBetween';
+    }
+
+    public function getOptionResolver(): array
+    {
+        return [];
     }
 }

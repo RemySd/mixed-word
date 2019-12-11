@@ -13,7 +13,7 @@ class BlenderRandom implements BlenderInterface
      *
      * @return string
      */
-    public function doMixe(string $word): string
+    public function doMixe(string $word, array $options = []): string
     {
         $result = "";
         $characters = str_split($word);
@@ -39,5 +39,10 @@ class BlenderRandom implements BlenderInterface
     public static function getName(): string
     {
         return 'BlenderRandom';
+    }
+
+    public function getOptionResolver(): array
+    {
+        return [];
     }
 }
