@@ -15,9 +15,10 @@ class BlenderNoConsonant implements BlenderInterface
      *
      * @param string $word
      *
+     * @param array $options
      * @return string
      */
-    public function doMixe(string $word): string
+    public function doMixe(string $word, array $options = []): string
     {
         $result = "";
 
@@ -40,5 +41,10 @@ class BlenderNoConsonant implements BlenderInterface
     public static function getName(): string
     {
         return 'BlenderNoConsonant';
+    }
+
+    public function getOptionResolver(): array
+    {
+        return [];
     }
 }

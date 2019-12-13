@@ -7,9 +7,9 @@ use RemySd\MixedWord\Blender;
 
 $blender = new Blender();
 
-echo $blender->mixe('hello'); // BlenderReverse by default
-echo "\n";
 echo $blender->mixe('hello', Blender::BLENDER_RANDOM);
+echo "\n";
+echo $blender->mixe('hello'); // BlenderReverse by default
 echo "\n";
 echo $blender->multipleMixe('hello', [Blender::BLENDER_RANDOM, Blender::BLENDER_RANDOM]);
 echo "\n";
@@ -22,4 +22,8 @@ echo "\n";
 echo $blender->mixe('hello my friend', Blender::BLENDER_REMOVE_SPACE);
 echo "\n";
 echo $blender->mixe('hello !', Blender::BLENDER_SPACE_BETWEEN);
+echo "\n";
+echo $blender->mixe('hello !', Blender::BLENDER_REMOVE_CHARACTERS, [
+    'characters' => ['l', '!']
+]);
 

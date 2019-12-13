@@ -17,7 +17,7 @@ class BlenderNotVowels implements BlenderInterface
      *
      * @return string
      */
-    public function doMixe(string $word): string
+    public function doMixe(string $word, array $options = []): string
     {
         $result = "";
 
@@ -40,5 +40,10 @@ class BlenderNotVowels implements BlenderInterface
     public static function getName(): string
     {
         return 'BlenderNotVowels';
+    }
+
+    public function getOptionResolver(): array
+    {
+        return [];
     }
 }

@@ -2,24 +2,21 @@
 
 namespace RemySd\MixedWord\Type;
 
+use RemySd\MixedWord\Blender;
 use RemySd\MixedWord\BlenderInterface;
 
-class BlenderUpperLowerLoop implements BlenderInterface
+class BlenderRemoveCharacters implements BlenderInterface
 {
     public function doMixe(string $word, array $options = []): string
     {
         $result = "";
-        $caps = true;
 
         foreach (str_split($word) as $character) {
-
-            if ($caps) {
-                $result .= strtoupper($character);
-            } else {
-                $result .= strtolower($character);
+            if (in_array($character, $options['characters'])) {
+                continue;
             }
 
-            $caps = !$caps;
+            $result .= $character;
         }
 
         return $result;
@@ -32,11 +29,13 @@ class BlenderUpperLowerLoop implements BlenderInterface
 
     public static function getName(): string
     {
-        return 'BlenderUpperLowerLoop';
+        return 'BlenderRemoveCharacters';
     }
 
     public function getOptionResolver(): array
     {
-        return [];
+        return [
+            'characters' => [' ']
+        ];
     }
 }

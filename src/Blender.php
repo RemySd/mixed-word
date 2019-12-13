@@ -13,6 +13,8 @@ class Blender
     const BLENDER_UPPER_LOWER_LOOP = 'BlenderUpperLowerLoop';
     const BLENDER_SPACE_BETWEEN = 'BlenderSpaceBetween';
     const BLENDER_REMOVE_SPACE = 'BlenderRemoveSpace';
+    const BLENDER_REMOVE_CHARACTER = 'BlenderRemoveCharacter';
+    const BLENDER_REMOVE_CHARACTERS = 'BlenderRemoveCharacters';
 
     /**
      * @var BlenderRegistry only with BlenderInterface element
@@ -24,9 +26,10 @@ class Blender
         $this->blenderRegistry = new BlenderRegistry();
     }
 
-    public function mixe(string $word, string $type = self::BLENDER_REVERSE): string
+    public function mixe(string $word, string $type = self::BLENDER_REVERSE, array $options = []): string
     {
         $blender = $this->blenderRegistry->get($type);
+        $options = $this->setOptionsResolver($blender, $options);
 
         if ($blender->getDependencyMixe()) {
             foreach ($blender->getDependencyMixe() as $dependencyBlenderName) {
@@ -34,7 +37,7 @@ class Blender
             }
         }
 
-        return $this->blenderRegistry->get($type)->doMixe($word);
+        return $this->blenderRegistry->get($type)->doMixe($word, $options);
     }
 
     public function multipleMixe(string $word, array $types = [self::BLENDER_REVERSE]): string
@@ -44,5 +47,26 @@ class Blender
         }
 
         return $word;
+    }
+
+    private function setOptionsResolver(BlenderInterface $blender, array $options = []): array
+    {
+        if (empty($options)) {
+            return $blender->getOptionResolver();
+        }
+
+        $optionsUpdated = [];
+
+        foreach($blender->getOptionResolver() as $key => $value) {
+            if(array_key_exists($key, $options)) {
+                $optionsUpdated[$key] = $options[$key];
+                continue;
+            }
+
+            // Default value to optionsResolver
+            $optionsUpdated[$key] = $value;
+        }
+
+        return $optionsUpdated;
     }
 }
