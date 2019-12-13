@@ -11,10 +11,10 @@ class BlenderBetween implements BlenderInterface
         $result = "";
 
         foreach (str_split($word) as $character) {
-            $result .= $character . $options;
+            $result .= $character . $options['character'];
         }
 
-        return rtrim($result, $options);
+        return rtrim($result, $options['character']);
     }
 
     public function getDependencyMixe(): array
