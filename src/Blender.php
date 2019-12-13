@@ -15,6 +15,7 @@ class Blender
     const BLENDER_REMOVE_SPACE = 'BlenderRemoveSpace';
     const BLENDER_REMOVE_CHARACTER = 'BlenderRemoveCharacter';
     const BLENDER_REMOVE_CHARACTERS = 'BlenderRemoveCharacters';
+    const BLENDER_BETWEEN = 'BlenderBetween';
 
     /**
      * @var BlenderRegistry only with BlenderInterface element
