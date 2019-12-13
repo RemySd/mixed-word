@@ -65,4 +65,9 @@ class BlenderTest extends TestCase
         $this->assertEquals('h e l l o', $this->blender->mixe('hello', Blender::BLENDER_SPACE_BETWEEN));
         $this->assertEquals('h e l l o', $this->blender->mixe('hello', 'BlenderSpaceBetween'));
     }
+
+    public function testBlenderUpperVowel(): void
+    {
+        $this->assertEquals('hEllO', $this->blender->mixe('hello', Blender::BLENDER_UPPER_VOWEL));
+    }
 }

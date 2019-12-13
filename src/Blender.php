@@ -6,6 +6,9 @@ use RemySd\MixedWord\BlenderRegistry;
 
 class Blender
 {
+    /**
+     * All blenders names
+     */
     const BLENDER_REVERSE = 'BlenderReverse';
     const BLENDER_RANDOM = 'BlenderRandom';
     const BLENDER_NOT_VOWELS = 'BlenderNotVowels';
@@ -13,6 +16,7 @@ class Blender
     const BLENDER_UPPER_LOWER_LOOP = 'BlenderUpperLowerLoop';
     const BLENDER_SPACE_BETWEEN = 'BlenderSpaceBetween';
     const BLENDER_REMOVE_SPACE = 'BlenderRemoveSpace';
+    const BLENDER_UPPER_VOWEL = 'BlenderUpperVowel';
 
     /**
      * @var BlenderRegistry only with BlenderInterface element
