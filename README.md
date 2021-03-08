@@ -8,7 +8,7 @@
 ## Installation
 
 ```bash
-composer require remysd/fir_builder
+composer require remysd/mixed-word
 ```
 
 ## Example
